@@ -1,4 +1,4 @@
-#build binary :	go build -o ./bin/ph_xlxx.exe
+#build binary :	go build -o ./bin/ph_xlxs.exe
 start:
 	go run ./src/
 

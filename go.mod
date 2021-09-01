@@ -1,4 +1,4 @@
-module brice.local/ph_xlxx
+module brice.local/ph_xlxs
 
 go 1.16
 

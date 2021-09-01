@@ -21,7 +21,7 @@ func main() {
 	headers := extractHeaders(rows)
 	mapRows := mapRows(rows, headers)
 	sumMapping := mapSum(mapRows, headers)
-	generateXlxx(sumMapping, filename)
+	generateXlxs(sumMapping, filename)
 	
 }
 

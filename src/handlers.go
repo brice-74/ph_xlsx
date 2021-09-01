@@ -100,7 +100,7 @@ func mapSum(mapRows *map[int]map[string]string, headers *Headers) (*map[string]m
 	return &sumMapping
 }  
 
-func generateXlxx(sumMapping *map[string]map[string]float64, fileName string) () {
+func generateXlxs(sumMapping *map[string]map[string]float64, fileName string) () {
 	f := excelize.NewFile()
 	sheet := f.NewSheet("Sheet1")
 
@@ -116,9 +116,9 @@ func generateXlxx(sumMapping *map[string]map[string]float64, fileName string) ()
 	}
 
 	f.SetActiveSheet(sheet)
-	if err := f.SaveAs("generate/"+ fileName); err != nil {
+	if err := f.SaveAs("generate/_"+ fileName); err != nil {
 		log.Fatal(err)
 	}
 
-	log.Println("Create file : " + fileName + " generated successfuly")
+	log.Println("Create file : _" + fileName + " generated successfuly")
 }
