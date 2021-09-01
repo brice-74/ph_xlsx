@@ -27,7 +27,7 @@ func getOnlyFile(files []fs.FileInfo) (fs.FileInfo) {
 	return files[0]
 } 
 
-func openXlxsFile(pathfile string) (*excelize.File) {
+func openXlsxFile(pathfile string) (*excelize.File) {
 	f, err := excelize.OpenFile(pathfile)
 	if err != nil {
 		log.Fatal(err)

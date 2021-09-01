@@ -15,10 +15,10 @@ type Headers struct {
 	global						[]string
 }
 
-func scanXlxsOnly(path string, sheetName string) (*[][]string, string) {
+func scanXlsxOnly(path string, sheetName string) (*[][]string, string) {
 	file 	:= getOnlyFile(scanDir(path))
-	fxlxs := openXlxsFile(path + file.Name())
-	rows 	:= getRowsFromExcelize(fxlxs, sheetName)
+	fxlsx := openXlsxFile(path + file.Name())
+	rows 	:= getRowsFromExcelize(fxlsx, sheetName)
 	
 	return rows, file.Name()
 }
@@ -100,7 +100,7 @@ func mapSum(mapRows *map[int]map[string]string, headers *Headers) (*map[string]m
 	return &sumMapping
 }  
 
-func generateXlxs(sumMapping *map[string]map[string]float64, fileName string) () {
+func generateXlsx(sumMapping *map[string]map[string]float64, fileName string) () {
 	f := excelize.NewFile()
 	sheet := f.NewSheet("Sheet1")
 

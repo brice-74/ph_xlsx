@@ -13,7 +13,7 @@ func main() {
 	sheet := flag.String("sheet", "Feuille 1", "Sheetname to open")
 	flag.Parse()
 
-	rows, filename := scanXlxsOnly("./scan/", *sheet)
+	rows, filename := scanXlsxOnly("./scan/", *sheet)
 
 	// test with less lines from rows 
 	// testRows := [][]string{(*rows)[0], (*rows)[22]}
@@ -21,7 +21,7 @@ func main() {
 	headers := extractHeaders(rows)
 	mapRows := mapRows(rows, headers)
 	sumMapping := mapSum(mapRows, headers)
-	generateXlxs(sumMapping, filename)
+	generateXlsx(sumMapping, filename)
 	
 }
 
